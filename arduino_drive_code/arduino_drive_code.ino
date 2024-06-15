@@ -3,7 +3,7 @@
 #include <WebServer.h>
 
 // WiFi credentials
-const char* ssid = "OPPO Reno9 Pro+ 5G";
+const char* ssid = "OPPOchen";
 const char* password = "xuchenxuchen";
 
 // Create a web server on port 80
@@ -146,7 +146,7 @@ void motorControlTask(void * pvParameters) {
     motor.move(motor.target);
     motor1.loopFOC();
     motor1.move(motor1.target);
-    delay(10); // 可调整延时以匹配电机控制的需求
+    // delay(1); // 可调整延时以匹配电机控制的需求
   }
 }
 
@@ -170,7 +170,7 @@ void initHardware() {
   motor.PID_velocity.I = motor1.PID_velocity.I = 10;
   motor.voltage_limit = motor1.voltage_limit = 7.6;
   motor.LPF_velocity.Tf = motor1.LPF_velocity.Tf = 0.01;
-  motor.velocity_limit = motor1.velocity_limit = 40;
+  motor.velocity_limit = motor1.velocity_limit = 50;
   motor.init();
   motor1.init();
   motor.initFOC();
